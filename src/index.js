@@ -1,4 +1,4 @@
-// import './style.css';
+import './style.css';
 import '@picocss/pico/css/pico.min.css';
 
 const app = document.getElementById('app');
@@ -20,22 +20,22 @@ const siteTitle = createElement('h1', 'title', 'El Sabroso');
 
 const heroImage = createImage('https://picsum.photos/200/300', 'Random Image');
 
-const siteDescription = createElement(
+const tagline = createElement(
   'h2',
   'headline',
   'A Taste of the Dominican Republic'
-);
-
-const introText = createElement(
-  'p',
-  'introText',
-  "Welcome to EL SABROSO, a restaurant that celebrates the delicious flavors of the Dominican Republic. We use only the freshest, highest-quality ingredients to create our authentic Dominican dishes, and our chefs are experts in traditional Dominican cuisine. We offer a wide variety of dishes, so there's something for everyone to enjoy."
 );
 
 const descriptionContainerEl = createElement(
   'div',
   'descriptionContainerEl',
   ''
+);
+
+const introText = createElement(
+  'p',
+  'introText',
+  "Welcome to EL SABROSO, a restaurant that celebrates the delicious flavors of the Dominican Republic. We use only the freshest, highest-quality ingredients to create our authentic Dominican dishes, and our chefs are experts in traditional Dominican cuisine. We offer a wide variety of dishes, so there's something for everyone to enjoy."
 );
 
 const bodyParaOne = createElement(
@@ -61,3 +61,9 @@ descriptionContainerEl.appendChild(introText);
 app.appendChild(bodyCopy);
 bodyCopy.appendChild(bodyParaOne);
 bodyCopy.appendChild(bodyParaTwo);
+
+const callToActionEl = createElement('div', 'callToActionEl', '');
+const callToActionBtn = createElement('button', 'callToActionBtn', 'BOOK NOW');
+
+app.appendChild(callToActionEl);
+callToActionEl.appendChild(callToActionBtn);
