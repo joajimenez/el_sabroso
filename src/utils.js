@@ -37,9 +37,5 @@ export function createNav(brand, links) {
   return nav;
 }
 
-// const navbar = createNav('El Sabroso', [
-//   { text: 'MENU', href: 'www.google.com' },
-//   { text: 'ABOUT', href: 'www.google.com' },
-// ]);
 
-// app.appendChild(nav);
+//   "We're proud to be a part of the Dominican community in New York City, and we hope you'll join us for a meal soon!"    

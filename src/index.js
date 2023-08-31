@@ -1,80 +1,89 @@
 import './style.css';
 import '@picocss/pico/css/pico.min.css';
 import { createElement, createImage, createNav } from './utils.js';
+import { app } from './ui.js';
 
-const app = document.getElementById('app');
+const createNewNav = () => {
+  const navbar = createNav('El Sabroso', [
+    { text: 'MENU', href: 'www.google.com' },
+    { text: 'ABOUT', href: 'www.google.com' },
 
-// function createElement(elTipe, elClass, elText) {
-//   const element = document.createElement(`${elTipe}`);
-//   element.classList.add(`${elClass}`);
-//   element.textContent = `${elText}`;
-//   return element;
-// }
-// function createImage(src, alt) {
-//   const image = document.createElement('img');
-//   image.src = `${src}`;
-//   image.alt = `${alt}`;
-//   return image;
-// }
+    { text: 'RESERVATIONS', href: 'www.google.com' },
+  ]);
 
-const navbar = createNav('El Sabroso', [
-  { text: 'MENU', href: 'www.google.com' },
-  { text: 'ABOUT', href: 'www.google.com' },
+  app.appendChild(navbar);
+};
 
-  { text: 'RESERVATIONS', href: 'www.google.com' },
-]);
+const createIndexContent = () => {
+  const heroImage = createImage(
+    'https://picsum.photos/200/300',
+    'Random Image'
+  );
 
-app.appendChild(navbar);
+  app.appendChild(heroImage);
 
-// const siteTitle = createElement('h1', 'title', 'El Sabroso');
+  // const tagline = createElement(
+  //   'h2',
+  //   'headline',
+  //   'A Taste of the Dominican Republic'
+  // );
 
-const heroImage = createImage('https://picsum.photos/200/300', 'Random Image');
+  const descriptionContainerEl = createElement(
+    'div',
+    'descriptionContainerEl',
+    ''
+  );
 
-app.appendChild(heroImage);
+  const introText = createElement(
+    'p',
+    'introText',
+    "Welcome to EL SABROSO, a restaurant that celebrates the delicious flavors of the Dominican Republic. We use only the freshest, highest-quality ingredients to create our authentic Dominican dishes, and our chefs are experts in traditional Dominican cuisine. We offer a wide variety of dishes, so there's something for everyone to enjoy."
+  );
 
-// const tagline = createElement(
-//   'h2',
-//   'headline',
-//   'A Taste of the Dominican Republic'
-// );
+  const bodyParaOne = createElement(
+    'p',
+    'bodyParaOne',
+    "Our passion for Dominican food is evident in every bite. We believe that food is more than just sustenance; it's a way to connect with our culture and heritage. That's why we take great care in sourcing our ingredients and preparing our dishes. We want you to experience the true flavors of the Dominican Republic, and we believe that our food is the best way to do that."
+  );
 
-const descriptionContainerEl = createElement(
-  'div',
-  'descriptionContainerEl',
-  ''
-);
+  const bodyParaTwo = createElement(
+    'p',
+    'bodyParaTwo',
+    "We also believe in providing our customers with a warm and welcoming experience. Our staff is friendly and attentive, and they're always happy to help you choose the perfect dish. We want you to feel like you're part of our family when you dine with us."
+  );
 
-const introText = createElement(
-  'p',
-  'introText',
-  "Welcome to EL SABROSO, a restaurant that celebrates the delicious flavors of the Dominican Republic. We use only the freshest, highest-quality ingredients to create our authentic Dominican dishes, and our chefs are experts in traditional Dominican cuisine. We offer a wide variety of dishes, so there's something for everyone to enjoy."
-);
+  const bodyParaThree = createElement(
+    'p',
+    'bodyParaThree',
+    "We're proud to be a part of the Dominican community in our city, and we hope you'll join us for a meal soon!"
+  );
 
-const bodyParaOne = createElement(
-  'p',
-  'bodyParaOne',
-  "Our passion for Dominican food is evident in every bite. We believe that food is more than just sustenance; it's a way to connect with our culture and heritage. That's why we take great care in sourcing our ingredients and preparing our dishes. We want you to experience the true flavors of the Dominican Republic, and we believe that our food is the best way to do that."
-);
+  const bodyCopy = createElement('div', 'bodyCopy', '');
 
-const bodyParaTwo = createElement(
-  'p',
-  'bodyParaTwo',
-  "We also believe in providing our customers with a warm and welcoming experience. Our staff is friendly and attentive, and they're always happy to help you choose the perfect dish. We want you to feel like you're part of our family when you dine with us."
-);
+  // app.appendChild(siteTitle);
 
-const bodyCopy = createElement('div', 'bodyCopy', '');
+  app.appendChild(descriptionContainerEl);
+  descriptionContainerEl.appendChild(introText);
 
-// app.appendChild(siteTitle);
+  app.appendChild(bodyCopy);
+  // bodyCopy.appendChild(bodyParaOne);
+  // bodyCopy.appendChild(bodyParaTwo);
+  bodyCopy.appendChild(bodyParaThree);
 
-app.appendChild(descriptionContainerEl);
-descriptionContainerEl.appendChild(introText);
+  const callToActionEl = createElement('div', 'callToActionEl', '');
+  const callToActionBtn = createElement(
+    'button',
+    'callToActionBtn',
+    'BOOK NOW'
+  );
 
-app.appendChild(bodyCopy);
-// bodyCopy.appendChild(bodyParaOne);
-// bodyCopy.appendChild(bodyParaTwo);
+  app.appendChild(callToActionEl);
+  callToActionEl.appendChild(callToActionBtn);
+};
 
-const callToActionEl = createElement('div', 'callToActionEl', '');
-const callToActionBtn = createElement('button', 'callToActionBtn', 'BOOK NOW');
+function main() {
+  createNewNav();
+  createIndexContent();
+}
 
-app.appendChild(callToActionEl);
-callToActionEl.appendChild(callToActionBtn);
+main();
