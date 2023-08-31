@@ -1,30 +1,42 @@
 import './style.css';
 import '@picocss/pico/css/pico.min.css';
+import { createElement, createImage, createNav } from './utils.js';
 
 const app = document.getElementById('app');
 
-function createElement(elTipe, elClass, elText) {
-  const element = document.createElement(`${elTipe}`);
-  element.classList.add(`${elClass}`);
-  element.textContent = `${elText}`;
-  return element;
-}
-function createImage(src, alt) {
-  const image = document.createElement('img');
-  image.src = `${src}`;
-  image.alt = `${alt}`;
-  return image;
-}
+// function createElement(elTipe, elClass, elText) {
+//   const element = document.createElement(`${elTipe}`);
+//   element.classList.add(`${elClass}`);
+//   element.textContent = `${elText}`;
+//   return element;
+// }
+// function createImage(src, alt) {
+//   const image = document.createElement('img');
+//   image.src = `${src}`;
+//   image.alt = `${alt}`;
+//   return image;
+// }
 
-const siteTitle = createElement('h1', 'title', 'El Sabroso');
+const navbar = createNav('El Sabroso', [
+  { text: 'MENU', href: 'www.google.com' },
+  { text: 'ABOUT', href: 'www.google.com' },
+
+  { text: 'RESERVATIONS', href: 'www.google.com' },
+]);
+
+app.appendChild(navbar);
+
+// const siteTitle = createElement('h1', 'title', 'El Sabroso');
 
 const heroImage = createImage('https://picsum.photos/200/300', 'Random Image');
 
-const tagline = createElement(
-  'h2',
-  'headline',
-  'A Taste of the Dominican Republic'
-);
+app.appendChild(heroImage);
+
+// const tagline = createElement(
+//   'h2',
+//   'headline',
+//   'A Taste of the Dominican Republic'
+// );
 
 const descriptionContainerEl = createElement(
   'div',
@@ -52,15 +64,14 @@ const bodyParaTwo = createElement(
 
 const bodyCopy = createElement('div', 'bodyCopy', '');
 
-app.appendChild(siteTitle);
-app.appendChild(heroImage);
+// app.appendChild(siteTitle);
 
 app.appendChild(descriptionContainerEl);
 descriptionContainerEl.appendChild(introText);
 
 app.appendChild(bodyCopy);
-bodyCopy.appendChild(bodyParaOne);
-bodyCopy.appendChild(bodyParaTwo);
+// bodyCopy.appendChild(bodyParaOne);
+// bodyCopy.appendChild(bodyParaTwo);
 
 const callToActionEl = createElement('div', 'callToActionEl', '');
 const callToActionBtn = createElement('button', 'callToActionBtn', 'BOOK NOW');
