@@ -7,7 +7,6 @@ const createNewNav = () => {
   const navbar = createNav('El Sabroso', [
     { text: 'MENU', href: 'www.google.com' },
     { text: 'ABOUT', href: 'www.google.com' },
-
     { text: 'RESERVATIONS', href: 'www.google.com' },
   ]);
 

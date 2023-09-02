@@ -1,101 +1,105 @@
 import { createElement, createImage } from './utils.js';
 import { app } from './ui.js';
+import { menu } from './data.json';
 
-const drinks = {
-  introText:
-    'Indulge in the vibrant flavors of the Caribbean with our refreshing selection of drinks, specially crafted to complement the rich and diverse cuisine of the Dominican Republic.',
-  tropicalDelights: {
-    'Mango Tango Cooler':
-      'A blend of ripe mangoes and a hint of lime, served over ice.',
+// const drinks = {
+//   introText:
+//     'Indulge in the vibrant flavors of the Caribbean with our refreshing selection of drinks, specially crafted to complement the rich and diverse cuisine of the Dominican Republic.',
+//   'Tropical Delights': {
+//     'Mango Tango Cooler':
+//       'A blend of ripe mangoes and a hint of lime, served over ice.',
 
-    'Passionfruit Paradise':
-      'An exotic mix of passionfruit, pineapple, and coconut milk.',
+//     'Passionfruit Paradise':
+//       'An exotic mix of passionfruit, pineapple, and coconut milk.',
 
-    'Papaya Punch': 'Fresh papaya puree with a splash of guava nectar.',
-  },
+//     'Papaya Punch': 'Fresh papaya puree with a splash of guava nectar.',
+//   },
 
-  signatureCocktails: {
-    'El Presidente':
-      'A classic Dominican cocktail made with rum, vermouth, and bitters.',
-    'Mama Juana':
-      'A traditional Dominican drink made with rum, red wine, honey, and herbs.',
-    'Santo Libre':
-      'Our take on the classic Cuba Libre, featuring aged rum and local cola.',
-    'Morir Soñando Martini':
-      'A creamy concoction of orange juice, condensed milk, and a touch of vanilla.',
-  },
+//   'Signature Cocktails': {
+//     'El Presidente':
+//       'A classic Dominican cocktail made with rum, vermouth, and bitters.',
+//     'Mama Juana':
+//       'A traditional Dominican drink made with rum, red wine, honey, and herbs.',
+//     'Santo Libre':
+//       'Our take on the classic Cuba Libre, featuring aged rum and local cola.',
+//     'Morir Soñando Martini':
+//       'A creamy concoction of orange juice, condensed milk, and a touch of vanilla.',
+//   },
 
-  'Coffe and Tea': {
-    'Café con Leche': 'A rich and creamy blend of coffee and milk.',
-    'Café Santo Domingo': 'A bold and flavorful Dominican coffee.',
-    'Jamaica Tea': 'A refreshing hibiscus tea with a hint of ginger.',
-  },
-};
+//   'Coffe and Tea': {
+//     'Café con Leche': 'A rich and creamy blend of coffee and milk.',
+//     'Café Santo Domingo': 'A bold and flavorful Dominican coffee.',
+//     'Jamaica Tea': 'A refreshing hibiscus tea with a hint of ginger.',
+//   },
+// };
 
-const mainDishes = {
-  introText:
-    'Embark on a culinary journey through the heart of Dominican cuisine. Our main dishes are a celebration of bold flavors and traditional recipes passed down through generations.',
+// const mainDishes = {
+//   introText:
+//     'Embark on a culinary journey through the heart of Dominican cuisine. Our main dishes are a celebration of bold flavors and traditional recipes passed down through generations.',
 
-  tradicionales: {
-    'La Bandera Tradicional':
-      'The national dish of the Dominican Republic, featuring rice, beans, and meat.',
-    'Mariscos Especiales':
-      'A seafood lover’s dream, with shrimp, lobster, and crab.',
-    'Chivo Guisado': 'A hearty stew of goat meat, potatoes, and carrots.',
-  },
+//   tradicionales: {
+//     'La Bandera Tradicional':
+//       'The national dish of the Dominican Republic, featuring rice, beans, and meat.',
+//     'Mariscos Especiales':
+//       'A seafood lover’s dream, with shrimp, lobster, and crab.',
+//     'Chivo Guisado': 'A hearty stew of goat meat, potatoes, and carrots.',
+//   },
 
-  'Mariscos Especiales': {
-    'Camarones Criollos':
-      'Shrimp sautéed in a tomato-based sauce with peppers and onions.',
-    'Pescado Frito': 'Fried fish served with rice, beans, and plantains.',
-    'Camarones al Ajillo': 'Shrimp sautéed in garlic and olive oil.',
-    'Lobster Ceviche':
-      'Fresh lobster marinated in lime juice and served with plantain chips.',
-  },
+//   'Mariscos Especiales': {
+//     'Camarones Criollos':
+//       'Shrimp sautéed in a tomato-based sauce with peppers and onions.',
+//     'Pescado Frito': 'Fried fish served with rice, beans, and plantains.',
+//     'Camarones al Ajillo': 'Shrimp sautéed in garlic and olive oil.',
+//     'Lobster Ceviche':
+//       'Fresh lobster marinated in lime juice and served with plantain chips.',
+//   },
 
-  'Sabores de la Tierra': {
-    'Mofongo Relleno':
-      'Mashed and fried green plantains stuffed with your choice of savory meats.',
-    'Locrio de Pollo':
-      'A Dominican twist on paella, featuring chicken, rice, vegetables and a burst of spices.',
-    'Pastelón de Plátano':
-      'Layers of sweet plantains, ground meat, and melted cheese. A Dominican take on lasagna.',
-  },
-};
+//   'Sabores de la Tierra': {
+//     'Mofongo Relleno':
+//       'Mashed and fried green plantains stuffed with your choice of savory meats.',
+//     'Locrio de Pollo':
+//       'A Dominican twist on paella, featuring chicken, rice, vegetables and a burst of spices.',
+//     'Pastelón de Plátano':
+//       'Layers of sweet plantains, ground meat, and melted cheese. A Dominican take on lasagna.',
+//   },
+// };
 
-const desserts = {
-  introText:
-    'End your meal on a sweet note with our delightful Dominican desserts, each one a harmonious blend of tropical ingredients and authentic flavors.',
-  'Dulces Criollos': {
-    'Tres Leches Cake':
-      'A light, airey and velvety sponge cake soaked in three types of milk and topped with whipped cream.',
-    'Flan de Coco':
-      'A creamy coconut custard topped with delicate caramel glaze.',
-    Majarete: 'A sweet corn pudding with a hint of cinnamon.',
-  },
+// const desserts = {
+//   introText:
+//     'End your meal on a sweet note with our delightful Dominican desserts, each one a harmonious blend of tropical ingredients and authentic flavors.',
+//   'Dulces Criollos': {
+//     'Tres Leches Cake':
+//       'A light, airey and velvety sponge cake soaked in three types of milk and topped with whipped cream.',
+//     'Flan de Coco':
+//       'A creamy coconut custard topped with delicate caramel glaze.',
+//     Majarete: 'A sweet corn pudding with a hint of cinnamon.',
+//   },
 
-  'Frutas Frescas': {
-    'Mango Sorbet': 'A refreshing treat made with fresh mangoes.',
-    'Guava Empanadas':
-      'A crispy pastry filled with guava paste, served with vanilla ice cream.',
-    'Fruit Platter':
-      'A selection of fresh tropical fruits, including mango, papaya, and pineapple. Perfect for a light and healthy ending.',
-  },
-};
+//   'Frutas Frescas': {
+//     'Mango Sorbet': 'A refreshing treat made with fresh mangoes.',
+//     'Guava Empanadas':
+//       'A crispy pastry filled with guava paste, served with vanilla ice cream.',
+//     'Fruit Platter':
+//       'A selection of fresh tropical fruits, including mango, papaya, and pineapple. Perfect for a light and healthy ending.',
+//   },
+// };
 
-const outroText =
-  'Savor the true essence of the Dominican Republic through our carefully curated drinks, main dishes, and desserts. Each bite and sip is a journey to the sunny shores and vibrant streets of this captivating Caribbean nation.';
+// const outroText =
+//   'Savor the true essence of the Dominican Republic through our carefully curated drinks, main dishes, and desserts. Each bite and sip is a journey to the sunny shores and vibrant streets of this captivating Caribbean nation.';
 
 const createMenuContent = () => {
   const drinksEl = createElement('div', 'drinksEl', '');
   const mainDishesEl = createElement('div', 'mainDishesEl', '');
   const dessertsEl = createElement('div', 'dessertsEl', '');
 
-  const bodyParaOne = createElement(
+  const drinksIntroText = createElement(
     'p',
-    'bodyParaOne',
-    "Our passion for Dominican food is evident in every bite. We believe that food is more than just sustenance; it's a way to connect with our culture and heritage. That's why we take great care in sourcing our ingredients and preparing our dishes. We want you to experience the true flavors of the Dominican Republic, and we believe that our food is the best way to do that."
+    'drinksIntroText',
+    `${drinks.introText}`
   );
+
+  const drinksSectionOne = createElement('div', 'drinksSectionOne', '');
+  const drinksSectionTwo = createElement('div', 'drinksSectionTwo', '');
 
   const bodyParaTwo = createElement(
     'p',
