@@ -2,6 +2,7 @@ import { createElement, createImage } from './utils.js';
 import { app } from './ui.js';
 import { menu } from './data.json';
 
+
 // const drinks = {
 //   introText:
 //     'Indulge in the vibrant flavors of the Caribbean with our refreshing selection of drinks, specially crafted to complement the rich and diverse cuisine of the Dominican Republic.',
