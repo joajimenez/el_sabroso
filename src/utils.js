@@ -39,4 +39,16 @@ export function createNav(brand, links) {
   return nav;
 }
 
+export const createCard = (title, description, image) => {
+  const card = createElement('div', 'card', '');
+  const cardTitle = createElement('h3', 'cardTitle', title);
+  const cardDescription = createElement('p', 'cardDescription', description);
+  const cardImage = createImage('cardImage', image);
+
+  app.appendChild(card);
+  card.appendChild(cardImage);
+  card.appendChild(cardTitle);
+  card.appendChild(cardDescription);
+}
+
 //   "We're proud to be a part of the Dominican community in New York City, and we hope you'll join us for a meal soon!"

@@ -1,28 +1,63 @@
 import './style.css';
 import '@picocss/pico/css/pico.min.css';
-import { createElement, createImage, createNav } from './utils.js';
+import { createElement, createImage, createNav, createCard } from './utils.js';
+import { navButtons } from './ui.js';
 import { app } from './ui.js';
-import  menu  from './menu.json'
+import menu from './menu.json'
+import { createDrinkCardEl } from './menu.js'
+// import heroPhoto from './rest_hero.jpg'
 
-console.log(menu)
+// console.log(menu.Drinks['Tropical Delights'])
 
+const tropicalDelightTitles = Object.keys(menu.Drinks['Tropical Delights']);
+const tropicalDelightDescriptions = Object.values(menu.Drinks['Tropical Delights']);
+// console.log(drinksTitles);
+
+
+console.log(tropicalDelightTitles[0], tropicalDelightDescriptions[0]);
 
 const createNewNav = () => {
   const navbar = createNav('El Sabroso', [
     { text: 'MENU', href: '#', id: 'menuBtn' },
     { text: 'ABOUT', href: '#', id: 'aboutBtn' },
-
     { text: 'RESERVATIONS', href: '#', id: 'reservationsBtn' },
   ]);
 
   app.appendChild(navbar);
 };
 
+// Use a for in loop to extract drinks titles and descriptions from menu.json
+
+// const tropicalDelights = menu.Drinks['Tropical Delights'];
+
+// function extractTitlesAndDescriptions(obj) {
+//   for (const title in obj) {
+//     const description = obj[title]; // Access the description using the title as the key
+//     console.log(title, description);
+//   }
+// }
+
+// extractTitlesAndDescriptions(tropicalDelights);
+
+// for (const key in tropicalDelights) {
+
+//   const title = tropicalDelights[key];
+//   const description = tropicalDelights[key];
+
+//   console.log(title, description);
+
+// }
+
 const createIndexContent = () => {
   const heroImage = createImage(
-    'https://picsum.photos/200/300',
+    'https://picsum.photos/100/100',
     'Random Image'
   );
+
+
+
+  // const newHeroImage = new Image();
+  // newHeroImage.src = heroPhoto;
 
   app.appendChild(heroImage);
 
@@ -83,11 +118,22 @@ const createIndexContent = () => {
 
   app.appendChild(callToActionEl);
   callToActionEl.appendChild(callToActionBtn);
+
 };
 
 function main() {
   createNewNav();
   createIndexContent();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const aboutBtn = document.getElementById('aboutBtn');
+  const reservationsBtn = document.getElementById('reservationsBtn');
+
+  menuBtn.addEventListener('click', createCard('La Rossa', 'Lorem ipsum 2022',''));
+
 }
+
+
+
 
 main();
