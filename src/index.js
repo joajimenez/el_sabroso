@@ -4,7 +4,7 @@ import { createElement, createImage, createNav, createCard } from './utils.js';
 import {app, navButtons } from './ui.js';
 import { createDrinkCardEl, tropicalDelights } from './menu.js'
 import menu from './menu_data.json'
-// import heroPhoto from './rest_hero.jpg'
+import heroPhoto from './rest_hero.jpg'
 
 // console.log(menu.Drinks['Tropical Delights'])
 
@@ -48,17 +48,17 @@ const createNewNav = () => {
 // }
 
 const createIndexContent = () => {
-  const heroImage = createImage(
-    'https://picsum.photos/100/100',
-    'Random Image'
-  );
+  // const heroImage = createImage(
+  //   'https://picsum.photos/100/100',
+  //   'Random Image'
+  // );
 
 
 
-  // const newHeroImage = new Image();
-  // newHeroImage.src = heroPhoto;
+  const newHeroImage = new Image();
+  newHeroImage.src = heroPhoto;
 
-  app.appendChild(heroImage);
+  app.appendChild(newHeroImage);
 
   // const tagline = createElement(
   //   'h2',
@@ -104,9 +104,9 @@ const createIndexContent = () => {
   descriptionContainerEl.appendChild(introText);
 
   app.appendChild(bodyCopy);
-  // bodyCopy.appendChild(bodyParaOne);
+  bodyCopy.appendChild(bodyParaOne);
   // bodyCopy.appendChild(bodyParaTwo);
-  bodyCopy.appendChild(bodyParaThree);
+  // bodyCopy.appendChild(bodyParaThree);
 
   const callToActionEl = createElement('div', 'callToActionEl', '');
   const callToActionBtn = createElement(

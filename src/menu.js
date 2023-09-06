@@ -1,34 +1,8 @@
-import { createElement, createImage } from './utils.js';
+import { createElement, createImage, createCard } from './utils.js';
 import { app } from './ui.js';
 import  menu  from './menu_data.json';
 
 export const tropicalDelights = menu.Drinks['Tropical Delights'];
-
-
-
-
-
-//   introText:
-//     'End your meal on a sweet note with our delightful Dominican desserts, each one a harmonious blend of tropical ingredients and authentic flavors.',
-//   'Dulces Criollos': {
-//     'Tres Leches Cake':
-//       'A light, airey and velvety sponge cake soaked in three types of milk and topped with whipped cream.',
-//     'Flan de Coco':
-//       'A creamy coconut custard topped with delicate caramel glaze.',
-//     Majarete: 'A sweet corn pudding with a hint of cinnamon.',
-//   },
-
-//   'Frutas Frescas': {
-//     'Mango Sorbet': 'A refreshing treat made with fresh mangoes.',
-//     'Guava Empanadas':
-//       'A crispy pastry filled with guava paste, served with vanilla ice cream.',
-//     'Fruit Platter':
-//       'A selection of fresh tropical fruits, including mango, papaya, and pineapple. Perfect for a light and healthy ending.',
-//   },
-// };
-
-// const outroText =
-//   'Savor the true essence of the Dominican Republic through our carefully curated drinks, main dishes, and desserts. Each bite and sip is a journey to the sunny shores and vibrant streets of this captivating Caribbean nation.';
 
 
 
