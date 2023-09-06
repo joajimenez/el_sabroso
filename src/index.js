@@ -2,6 +2,10 @@ import './style.css';
 import '@picocss/pico/css/pico.min.css';
 import { createElement, createImage, createNav } from './utils.js';
 import { app } from './ui.js';
+import  menu  from './menu.json'
+
+console.log(menu)
+
 
 const createNewNav = () => {
   const navbar = createNav('El Sabroso', [
