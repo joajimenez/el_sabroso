@@ -1,9 +1,3 @@
 export const app = document.getElementById('app');
-
-export const menuBtn = document.getElementById('menuBtn');
-
-export const navButtons = {
-    menuBtn: document.querySelector('menuBtn'),
-    aboutBtn: document.getElementById('aboutBtn'),
-    reservationsBtn: document.getElementById('reservationsBtn'),
-}
+export const nav = document.getElementsByTagName('nav')
+export const contentEl = document.getElementsByClassName('content-container')

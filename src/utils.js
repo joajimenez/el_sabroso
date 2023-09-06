@@ -1,3 +1,5 @@
+import { app } from "./ui";
+
 export function createElement(elTipe, elClass, elText) {
   const element = document.createElement(`${elTipe}`);
   element.classList.add(`${elClass}`);
@@ -13,7 +15,7 @@ export function createImage(src, alt) {
 }
 
 export function createNav(brand, links) {
-  const nav = document.createElement('nav');
+  const nav = document.createElement('nav'); 
   const ul = document.createElement('ul');
 
   nav.classList.add('navbar');
@@ -50,5 +52,3 @@ export const createCard = (title, description, image) => {
   card.appendChild(cardTitle);
   card.appendChild(cardDescription);
 }
-
-//   "We're proud to be a part of the Dominican community in New York City, and we hope you'll join us for a meal soon!"

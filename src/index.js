@@ -1,7 +1,7 @@
 import './style.css';
 import '@picocss/pico/css/pico.min.css';
 import { createElement, createImage, createNav, createCard } from './utils.js';
-import {app, navButtons } from './ui.js';
+import {app, } from './ui.js';
 import { createDrinkCardEl, tropicalDelights } from './menu.js'
 import menu from './menu_data.json'
 import heroPhoto from './rest_hero.jpg'
@@ -47,18 +47,20 @@ const createNewNav = () => {
 
 // }
 
+const createContentEl = () => {
+   const contentEl = createElement('div', 'contentEl', '');
+   app.appendChild(contentEl)
+   return contentEl
+
+}
+
 const createIndexContent = () => {
-  // const heroImage = createImage(
-  //   'https://picsum.photos/100/100',
-  //   'Random Image'
-  // );
 
-
-
+  const contentEL = createContentEl()
   const newHeroImage = new Image();
   newHeroImage.src = heroPhoto;
 
-  app.appendChild(newHeroImage);
+  contentEL.appendChild(newHeroImage);
 
   // const tagline = createElement(
   //   'h2',
@@ -100,10 +102,10 @@ const createIndexContent = () => {
 
   // app.appendChild(siteTitle);
 
-  app.appendChild(descriptionContainerEl);
+  contentEL.appendChild(descriptionContainerEl);
   descriptionContainerEl.appendChild(introText);
 
-  app.appendChild(bodyCopy);
+  contentEL.appendChild(bodyCopy);
   bodyCopy.appendChild(bodyParaOne);
   // bodyCopy.appendChild(bodyParaTwo);
   // bodyCopy.appendChild(bodyParaThree);
@@ -115,7 +117,7 @@ const createIndexContent = () => {
     'BOOK NOW'
   );
 
-  app.appendChild(callToActionEl);
+  contentEL.appendChild(callToActionEl);
   callToActionEl.appendChild(callToActionBtn);
 
 };
@@ -129,6 +131,8 @@ function main() {
   const reservationsBtn = document.getElementById('reservationsBtn');
 
   menuBtn.addEventListener('click', () => {
+
+    // app.innerHTML = ''
     console.log(tropicalDelights)
   });
 }
