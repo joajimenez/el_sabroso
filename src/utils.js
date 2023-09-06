@@ -29,6 +29,8 @@ export function createNav(brand, links) {
 
     a.href = link.href;
     a.textContent = link.text;
+    a.id = link.id;
+    a.role = 'button';
 
     li.appendChild(a);
     ul.appendChild(li);
@@ -37,5 +39,4 @@ export function createNav(brand, links) {
   return nav;
 }
 
-
-//   "We're proud to be a part of the Dominican community in New York City, and we hope you'll join us for a meal soon!"    
+//   "We're proud to be a part of the Dominican community in New York City, and we hope you'll join us for a meal soon!"

@@ -91,6 +91,18 @@ const createMenuContent = () => {
   const mainDishesEl = createElement('div', 'mainDishesEl', '');
   const dessertsEl = createElement('div', 'dessertsEl', '');
 
+  app.appendChild(drinksEl);
+  drinksEl.appendChild(createElement('h2', 'drinksTitle', 'Drinks'));
+  drinksEl.appendChild(createElement('p', 'introText', drinks.introText));
+
+  app.appendChild(mainDishesEl);
+  mainDishesEl.appendChild(
+    createElement('h2', 'mainDishesTitle', 'Main Dishes')
+  );
+
+  app.appendChild(dessertsEl);
+  dessertsEl.appendChild(createElement('h2', 'dessertsTitle', 'Desserts'));
+
   const bodyParaOne = createElement(
     'p',
     'bodyParaOne',

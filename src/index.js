@@ -5,10 +5,10 @@ import { app } from './ui.js';
 
 const createNewNav = () => {
   const navbar = createNav('El Sabroso', [
-    { text: 'MENU', href: 'www.google.com' },
-    { text: 'ABOUT', href: 'www.google.com' },
+    { text: 'MENU', href: '#', id: 'menuBtn' },
+    { text: 'ABOUT', href: '#', id: 'aboutBtn' },
 
-    { text: 'RESERVATIONS', href: 'www.google.com' },
+    { text: 'RESERVATIONS', href: '#', id: 'reservationsBtn' },
   ]);
 
   app.appendChild(navbar);
