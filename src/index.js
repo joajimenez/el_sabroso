@@ -6,24 +6,13 @@ import {
   createImage,
   createNav,
   createCard,
+  createBookNowButton,
 } from "./utils.js";
 import { app } from "./ui.js";
 import { createMenuContent, tropicalDelights } from "./menu.js";
 import heroPhoto from "./rest_hero.jpg";
 
 export const contentEL = createContentEl();
-
-let delightsArray = Object.entries(tropicalDelights);
-console.log(delightsArray);
-
-for (let array of delightsArray) {
-  console.log(`${array[0]}: ${array[1]}`);
-}
-
-// const tropicalDelightTitles = Object.keys(tropicalDelights);
-// const tropicalDelightDescriptions = Object.values(tropicalDelights);
-
-// console.log(`${tropicalDelightTitles[0]}: ${tropicalDelightDescriptions[0]}`);
 
 const createNewNav = () => {
   const navbar = createNav("El Sabroso", [
@@ -76,21 +65,12 @@ const createIndexContent = () => {
   descriptionContainerEl.appendChild(introText);
   descriptionContainerEl.appendChild(bodyParaOne);
   contentEL.appendChild(descriptionContainerEl);
-
-  const callToActionEl = createElement("div", "callToActionEl", "");
-  const callToActionBtn = createElement(
-    "button",
-    "callToActionBtn",
-    "BOOK NOW"
-  );
-
-  contentEL.appendChild(callToActionEl);
-  callToActionEl.appendChild(callToActionBtn);
 };
 
 function main() {
   createNewNav();
   createIndexContent();
+  createBookNowButton(contentEL);
 
   const elSabrosoBtn = document.querySelector("li strong");
   const menuBtn = document.getElementById("menuBtn");
@@ -100,12 +80,14 @@ function main() {
   elSabrosoBtn.addEventListener("click", () => {
     contentEL.innerHTML = "";
     createIndexContent();
+    createBookNowButton(contentEL);
   });
 
   menuBtn.addEventListener("click", function () {
     contentEL.innerHTML = "";
     console.log(tropicalDelights);
     createMenuContent();
+    createBookNowButton(contentEL);
   });
 }
 

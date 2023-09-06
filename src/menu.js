@@ -1,4 +1,4 @@
-import { createElement, createImage, createCard } from "./utils.js";
+import { createElement } from "./utils.js";
 import { app } from "./ui.js";
 import { contentEL } from "./index.js";
 import menu from "./menu_data.json";
@@ -89,29 +89,4 @@ function createMainDishesSection() {
 export const createMenuContent = () => {
   creacteDrinksSection();
   createMainDishesSection();
-
-  // const mainDishes = createElement("div", "drinksSectionTwo", "");
-
-  //   const mainDishesEl = createElement('div', 'mainDishesEl', '');
-  //   const dessertsEl = createElement('div', 'dessertsEl', '');
-
-  //   app.appendChild(mainDishesEl);
-  //   mainDishesEl.appendChild(
-  //     createElement('h2', 'mainDishesTitle', 'Main Dishes')
-  //   );
-
-  //   app.appendChild(dessertsEl);
-  //   dessertsEl.appendChild(createElement('h2', 'dessertsTitle', 'Desserts'));
-
-  // app.appendChild(siteTitle);
-
-  const callToActionEl = createElement("div", "callToActionEl", "");
-  const callToActionBtn = createElement(
-    "button",
-    "callToActionBtn",
-    "BOOK NOW"
-  );
-
-  app.appendChild(callToActionEl);
-  callToActionEl.appendChild(callToActionBtn);
 };
