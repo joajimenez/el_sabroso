@@ -1,5 +1,12 @@
 import { app } from "./ui";
 
+export const createContentEl = () => {
+  const contentEl = createElement('div', 'contentEl', '');
+  // app.appendChild(contentEl)
+  return contentEl
+}
+
+
 export function createElement(elTipe, elClass, elText) {
   const element = document.createElement(`${elTipe}`);
   element.classList.add(`${elClass}`);

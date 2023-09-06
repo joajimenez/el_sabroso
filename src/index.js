@@ -1,10 +1,13 @@
 import './style.css';
 import '@picocss/pico/css/pico.min.css';
-import { createElement, createImage, createNav, createCard } from './utils.js';
-import {app, } from './ui.js';
+import { createContentEl, createElement, createImage, createNav, createCard } from './utils.js';
+import { app } from './ui.js';
 import { createDrinkCardEl, tropicalDelights } from './menu.js'
 import menu from './menu_data.json'
 import heroPhoto from './rest_hero.jpg'
+
+const contentEL = createContentEl()
+// app.appendChild(contentEL)
 
 // console.log(menu.Drinks['Tropical Delights'])
 
@@ -47,26 +50,17 @@ const createNewNav = () => {
 
 // }
 
-const createContentEl = () => {
-   const contentEl = createElement('div', 'contentEl', '');
-   app.appendChild(contentEl)
-   return contentEl
-
-}
 
 const createIndexContent = () => {
 
-  const contentEL = createContentEl()
+  // const contentEL = createContentEl()
+  app.appendChild(contentEL)
+
   const newHeroImage = new Image();
   newHeroImage.src = heroPhoto;
 
   contentEL.appendChild(newHeroImage);
 
-  // const tagline = createElement(
-  //   'h2',
-  //   'headline',
-  //   'A Taste of the Dominican Republic'
-  // );
 
   const descriptionContainerEl = createElement(
     'div',
@@ -100,8 +94,6 @@ const createIndexContent = () => {
 
   const bodyCopy = createElement('div', 'bodyCopy', '');
 
-  // app.appendChild(siteTitle);
-
   contentEL.appendChild(descriptionContainerEl);
   descriptionContainerEl.appendChild(introText);
 
@@ -123,16 +115,22 @@ const createIndexContent = () => {
 };
 
 function main() {
+
   createNewNav();
   createIndexContent();
 
+  const elSabrosoBtn = document.querySelector('li strong');
   const menuBtn = document.getElementById('menuBtn');
   const aboutBtn = document.getElementById('aboutBtn');
   const reservationsBtn = document.getElementById('reservationsBtn');
 
-  menuBtn.addEventListener('click', () => {
+  elSabrosoBtn.addEventListener('click', () => {
+    contentEL.innerHTML = ''
+    createIndexContent();
+  })
 
-    // app.innerHTML = ''
+  menuBtn.addEventListener('click', function() {
+    contentEL.innerHTML = ''
     console.log(tropicalDelights)
   });
 }
