@@ -28,32 +28,8 @@ const createNewNav = () => {
   app.appendChild(navbar);
 };
 
-// Use a for in loop to extract drinks titles and descriptions from menu.json
-
-// const tropicalDelights = menu.Drinks['Tropical Delights'];
-
-// function extractTitlesAndDescriptions(obj) {
-//   for (const title in obj) {
-//     const description = obj[title]; // Access the description using the title as the key
-//     console.log(title, description);
-//   }
-// }
-
-// extractTitlesAndDescriptions(tropicalDelights);
-
-// for (const key in tropicalDelights) {
-
-//   const title = tropicalDelights[key];
-//   const description = tropicalDelights[key];
-
-//   console.log(title, description);
-
-// }
-
 
 const createIndexContent = () => {
-
-  // const contentEL = createContentEl()
   app.appendChild(contentEL)
 
   const newHeroImage = new Image();
@@ -92,15 +68,9 @@ const createIndexContent = () => {
     "We're proud to be a part of the Dominican community in our city, and we hope you'll join us for a meal soon!"
   );
 
-  const bodyCopy = createElement('div', 'bodyCopy', '');
-
-  contentEL.appendChild(descriptionContainerEl);
   descriptionContainerEl.appendChild(introText);
-
-  contentEL.appendChild(bodyCopy);
-  bodyCopy.appendChild(bodyParaOne);
-  // bodyCopy.appendChild(bodyParaTwo);
-  // bodyCopy.appendChild(bodyParaThree);
+  descriptionContainerEl.appendChild(bodyParaOne)
+  contentEL.appendChild(descriptionContainerEl);
 
   const callToActionEl = createElement('div', 'callToActionEl', '');
   const callToActionBtn = createElement(
