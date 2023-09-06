@@ -1,8 +1,11 @@
 import { createElement, createImage } from './utils.js';
 import { app } from './ui.js';
-// import { menu } from './menu.json';
+import  menu  from './menu_data.json';
 
-// const tropicalDelights = menu.Drinks['Tropical Delights'];
+export const tropicalDelights = menu.Drinks['Tropical Delights'];
+
+
+
 
 
 //   introText:

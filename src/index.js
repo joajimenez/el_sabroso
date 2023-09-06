@@ -1,10 +1,9 @@
 import './style.css';
 import '@picocss/pico/css/pico.min.css';
 import { createElement, createImage, createNav, createCard } from './utils.js';
-import { navButtons } from './ui.js';
-import { app } from './ui.js';
-import menu from './menu.json'
-import { createDrinkCardEl } from './menu.js'
+import {app, navButtons } from './ui.js';
+import { createDrinkCardEl, tropicalDelights } from './menu.js'
+import menu from './menu_data.json'
 // import heroPhoto from './rest_hero.jpg'
 
 // console.log(menu.Drinks['Tropical Delights'])
@@ -129,11 +128,9 @@ function main() {
   const aboutBtn = document.getElementById('aboutBtn');
   const reservationsBtn = document.getElementById('reservationsBtn');
 
-  menuBtn.addEventListener('click', createCard('La Rossa', 'Lorem ipsum 2022',''));
-
+  menuBtn.addEventListener('click', () => {
+    console.log(tropicalDelights)
+  });
 }
-
-
-
 
 main();
