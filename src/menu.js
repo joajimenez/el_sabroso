@@ -5,6 +5,7 @@ import menu from "./menu_data.json";
 
 export const tropicalDelights = menu.Drinks["Tropical Delights"];
 export const mainDishes = menu["Main Dishes"].Tradicionales;
+export const desserts = menu["Desserts"]["Dulces Criollos"];
 
 function creacteDrinksSection() {
   const drinksEl = createElement("div", "drinksEl", "");
@@ -86,7 +87,47 @@ function createMainDishesSection() {
   contentEL.appendChild(mainDishesEl);
 }
 
+function createDessertsSection() {
+  const dessertsEl = createElement("div", "dessertsEl", "");
+
+  dessertsEl.appendChild(createElement("h2", "dessertsTitle", "Desserts"));
+  dessertsEl.appendChild(
+    createElement("p", "introText", menu.Desserts["Intro Text"])
+  );
+
+  const dessertsSectionOne = createElement("article", "dessertsSectionOne", "");
+  const dessertsHeader = createElement(
+    "header",
+    "dessertsHeader",
+    "Dulces Criollos"
+  );
+  const dessertsSectionOneOneBody = createElement(
+    "div",
+    "dessertsSectionOneBody",
+    ""
+  );
+
+  dessertsSectionOne.appendChild(dessertsHeader);
+  dessertsSectionOne.appendChild(dessertsSectionOneOneBody);
+
+  let dessertsArray = Object.entries(desserts);
+  console.log(dessertsArray);
+
+  for (let array of dessertsArray) {
+    let title = createElement("h5", "card-title", `${array[0]}`);
+    let description = createElement("p", "card-description", `${array[1]}`);
+
+    dessertsSectionOneOneBody.appendChild(title);
+    dessertsSectionOneOneBody.appendChild(description);
+  }
+
+  dessertsEl.appendChild(dessertsSectionOne);
+
+  contentEL.appendChild(dessertsEl);
+}
+
 export const createMenuContent = () => {
   creacteDrinksSection();
   createMainDishesSection();
+  createDessertsSection();
 };
