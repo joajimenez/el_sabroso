@@ -104,7 +104,7 @@ export function createAlternateReservationsSection() {
     alert(
       `Reservation set for ${reservation.numberOfGuests} guests on ${reservation.date} from ${reservation.firstName} ${reservation.lastName} with email ${reservation.email}.
       
-      We're trilled to see you.`
+      We're trilled to see you soon.`
     );
   });
 }
