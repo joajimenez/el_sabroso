@@ -1,48 +1,8 @@
 import { createElement } from "./utils.js";
 import { contentEL } from "./index.js";
+import Swal from "sweetalert2";
 
 // This function creates the reservation form
-export function createReservationsSection() {
-  const form = createElement("form", "form-el", "");
-  const innerGrid = createElement("div", "grid", "");
-
-  const firstNameLabel = createElement("label", "firstNameLabel", "");
-  firstNameLabel.htmlFor = "firstNameInput";
-  firstNameLabel.textContent = "First Name";
-
-  const firstNameInput = createElement("input", "firstNameInput", "");
-  firstNameInput.id = "firstNameInput";
-
-  const lastNameLabel = createElement("label", "lastNameLabel", "");
-  lastNameLabel.htmlFor = "lastNameInput";
-  lastNameLabel.textContent = "Last Name";
-
-  const lastNameInput = createElement("input", "lastNameInput", "");
-  lastNameInput.id = "lastNameInput";
-
-  const dateInput = createElement("input", "date-input", "");
-  dateInput.type = "date";
-
-  const emailLabel = createElement("label", "emailLabel", "");
-  emailLabel.htmlFor = "emailInput";
-  emailLabel.textContent = "Email";
-
-  const emailInput = createElement("input", "emailInput", "");
-  emailInput.id = "emailInput";
-  emailInput.ariaRequired = "true";
-
-  innerGrid.appendChild(firstNameLabel);
-  innerGrid.appendChild(firstNameInput);
-
-  innerGrid.appendChild(lastNameLabel);
-  innerGrid.appendChild(lastNameInput);
-
-  innerGrid.appendChild(emailLabel);
-  innerGrid.appendChild(emailInput);
-
-  form.appendChild(innerGrid);
-  contentEL.appendChild(form);
-}
 
 export function createAlternateReservationsSection() {
   let formHtml = `<form>
@@ -101,10 +61,15 @@ export function createAlternateReservationsSection() {
       numberOfGuests: numberOfGuests.value,
     };
 
-    alert(
-      `Reservation set for ${reservation.numberOfGuests} guests on ${reservation.date} from ${reservation.firstName} ${reservation.lastName} with email ${reservation.email}.
-      
-      We're trilled to see you soon.`
-    );
+    // Use the SweetAlert2 library to display a success message
+    Swal.fire({
+      titleText: "Reservation successful!",
+      text: `Reservation set for ${reservation.numberOfGuests} guests on ${reservation.date} from ${reservation.firstName} ${reservation.lastName} with email ${reservation.email}.
+
+      We're trilled to see you soon.`,
+      icon: "success",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#039be5",
+    });
   });
 }
