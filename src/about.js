@@ -3,7 +3,7 @@
 import { createElement } from "./utils.js";
 import { contentEL } from "./index.js";
 import about from "./about_us_data.json";
-import aboutUsPhoto from "./pexels-roman-odintsov-4552046.jpg";
+import aboutUsPhoto from "./assets/pexels-roman-odintsov-4552046.jpg";
 
 const aboutUsInfoObject = about.AboutUs;
 

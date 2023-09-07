@@ -1,4 +1,5 @@
 import { app } from "./ui";
+import { createAlternateReservationsSection } from "./reservations.js";
 // import { contentEl } from "./index.js";
 
 export const createContentEl = () => {
@@ -31,7 +32,7 @@ export function createNav(brand, links) {
 
   const brandLi = document.createElement("li");
   brandLi.innerHTML = `<strong>${brand}</strong>`;
-  ulOne.classList.add('logo')
+  ulOne.classList.add("logo");
   ulOne.appendChild(brandLi);
 
   links.forEach((link) => {
@@ -72,4 +73,8 @@ export function createBookNowButton(element) {
 
   callToActionEl.appendChild(callToActionBtn);
   element.appendChild(callToActionEl);
+
+  callToActionBtn.addEventListener("click", function () {
+    createAlternateReservationsSection();
+  });
 }

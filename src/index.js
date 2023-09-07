@@ -10,8 +10,11 @@ import {
 import { app } from "./ui.js";
 import { createMenuContent } from "./menu.js";
 import { createAboutUsSection } from "./about.js";
-import { createReservationsSection } from "./reservations.js";
-import heroPhoto from "./rest_hero.jpg";
+import {
+  createReservationsSection,
+  createAlternateReservationsSection,
+} from "./reservations.js";
+import heroPhoto from "./assets/rest_hero.jpg";
 
 export const contentEL = createContentEl();
 
@@ -97,10 +100,11 @@ function main() {
     createBookNowButton(contentEL);
   });
 
-  reservationsBtn.addEventListener('click', function () {
+  reservationsBtn.addEventListener("click", function () {
     contentEL.innerHTML = "";
-    createReservationsSection()
-  })
+    // createReservationsSection();
+    createAlternateReservationsSection();
+  });
 }
 
 main();
