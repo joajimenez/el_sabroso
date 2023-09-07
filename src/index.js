@@ -9,7 +9,8 @@ import {
   createBookNowButton,
 } from "./utils.js";
 import { app } from "./ui.js";
-import { createMenuContent, tropicalDelights } from "./menu.js";
+import { createMenuContent } from "./menu.js";
+import { createAboutUsSection } from "./about.js";
 import heroPhoto from "./rest_hero.jpg";
 
 export const contentEL = createContentEl();
@@ -27,10 +28,10 @@ const createNewNav = () => {
 const createIndexContent = () => {
   app.appendChild(contentEL);
 
-  const newHeroImage = new Image();
-  newHeroImage.src = heroPhoto;
+  const heroImage = new Image();
+  heroImage.src = heroPhoto;
 
-  contentEL.appendChild(newHeroImage);
+  contentEL.appendChild(heroImage);
 
   const descriptionContainerEl = createElement(
     "div",
@@ -85,8 +86,14 @@ function main() {
 
   menuBtn.addEventListener("click", function () {
     contentEL.innerHTML = "";
-    console.log(tropicalDelights);
+    // console.log(tropicalDelights);
     createMenuContent();
+    createBookNowButton(contentEL);
+  });
+
+  aboutBtn.addEventListener("click", function () {
+    contentEL.innerHTML = "";
+    createAboutUsSection();
     createBookNowButton(contentEL);
   });
 }
