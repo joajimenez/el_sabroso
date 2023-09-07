@@ -22,14 +22,17 @@ export function createImage(src, alt) {
 
 export function createNav(brand, links) {
   const nav = document.createElement("nav");
-  const ul = document.createElement("ul");
+  const ulOne = document.createElement("ul");
+  const ulTwo = document.createElement("ul");
 
   nav.classList.add("navbar");
-  nav.appendChild(ul);
+  nav.appendChild(ulOne);
+  nav.appendChild(ulTwo);
 
   const brandLi = document.createElement("li");
   brandLi.innerHTML = `<strong>${brand}</strong>`;
-  ul.appendChild(brandLi);
+  ulOne.classList.add('logo')
+  ulOne.appendChild(brandLi);
 
   links.forEach((link) => {
     const li = document.createElement("li");
@@ -41,7 +44,7 @@ export function createNav(brand, links) {
     a.role = "button";
 
     li.appendChild(a);
-    ul.appendChild(li);
+    ulTwo.appendChild(li);
   });
 
   return nav;

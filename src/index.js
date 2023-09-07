@@ -5,18 +5,18 @@ import {
   createElement,
   createImage,
   createNav,
-  createCard,
   createBookNowButton,
 } from "./utils.js";
 import { app } from "./ui.js";
 import { createMenuContent } from "./menu.js";
 import { createAboutUsSection } from "./about.js";
+import { createReservationsSection } from "./reservations.js";
 import heroPhoto from "./rest_hero.jpg";
 
 export const contentEL = createContentEl();
 
 const createNewNav = () => {
-  const navbar = createNav("El Sabroso", [
+  const navbar = createNav("EL SABROSO", [
     { text: "MENU", href: "#", id: "menuBtn" },
     { text: "ABOUT", href: "#", id: "aboutBtn" },
     { text: "RESERVATIONS", href: "#", id: "reservationsBtn" },
@@ -96,6 +96,11 @@ function main() {
     createAboutUsSection();
     createBookNowButton(contentEL);
   });
+
+  reservationsBtn.addEventListener('click', function () {
+    contentEL.innerHTML = "";
+    createReservationsSection()
+  })
 }
 
 main();
